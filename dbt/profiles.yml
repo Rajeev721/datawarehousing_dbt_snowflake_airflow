@@ -9,5 +9,5 @@ snowflake_warhouse:
       database: SNO_WAREHOUSE
       warehouse: COMPUTE_WH
       schema: dbt_models
-      password: Tcw472$@lenc12
+      password: T
       client_session_keep_alive: False
