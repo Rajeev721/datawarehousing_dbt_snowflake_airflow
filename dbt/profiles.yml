@@ -1,0 +1,13 @@
+snowflake_warhouse:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      account: BNGPWYN-OCB04897
+      user: CUSTODIAN
+      database: SNO_WAREHOUSE
+      warehouse: COMPUTE_WH
+      schema: dbt_models
+      password: Tcw472$@lenc12
+      client_session_keep_alive: False

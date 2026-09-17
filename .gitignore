@@ -1,0 +1,7 @@
+.venv
+src
+.python-version
+uv.lock
+.vscode
+.DS_Store
+dbt.log
