@@ -1,0 +1,14 @@
+version: 2
+models:
+    - name: customers
+      description: This Table will contain the customer data
+      config:
+        materialized: incremental
+        incremental_strategy: append
+        unique_key: CUSTOMER_ID
+      columns:
+       - name: CUSTOMER_ID
+         data_tests:
+          - unique
+          - not_null
+          - primary_key_validation

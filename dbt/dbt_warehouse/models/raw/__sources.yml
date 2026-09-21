@@ -1,0 +1,18 @@
+version : 2
+
+sources:
+    - name: TPCDS_SF100TCL
+      database: SNOWFLAKE_SAMPLE_DATA
+      schema: TPCDS_SF100TCL
+      tables:
+        - name: CUSTOMER
+        - name: CUSTOMER_ADDRESS
+        - name: CUSTOMER_DEMOGRAPHICS
+        - name: STORE
+        - name: CALL_CENTER
+        - name: WAREHOUSE
+        - name: ITEM
+        - name: HOUSEHOLD_DEMOGRAPHICS
+        - name: INCOME_BAND
+        - name: PROMOTION
+        - name: REASON

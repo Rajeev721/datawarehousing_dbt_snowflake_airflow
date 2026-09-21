@@ -3,3 +3,6 @@ dbt_internal_packages/
 logs/
 target/
 .env
+dbt_warehouse/profiles.yml
+dbt_warehouse/logs/
+profiles.yml
