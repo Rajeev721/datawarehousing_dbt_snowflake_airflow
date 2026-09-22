@@ -16,3 +16,4 @@ sources:
         - name: INCOME_BAND
         - name: PROMOTION
         - name: REASON
+        - name: DATE_DIM

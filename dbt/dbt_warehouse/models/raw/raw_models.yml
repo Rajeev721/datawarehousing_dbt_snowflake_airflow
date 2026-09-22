@@ -12,3 +12,21 @@ models:
           - unique
           - not_null
           - primary_key_validation
+       - name: BIRTH_YEAR
+         data_tests:
+          - not_null
+       - name: BIRTH_MONTH
+         data_tests:
+          - not_null
+       - name: BIRTH_DAY
+         data_tests:
+          - not_null
+    
+    - name: CUSTOMER_ADDRESS
+      description: This table will contain the addresses of the customers over time
+      columns:
+       - name: ADDRESS_ID
+         data_tests:
+          - unique
+          - not_null
+          - primary_key_validation

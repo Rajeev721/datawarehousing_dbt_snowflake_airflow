@@ -10,12 +10,21 @@ SELECT
 	C_BIRTH_COUNTRY AS BIRTH_COUNTRY,
 	C_LOGIN AS LOGIN,
 	C_EMAIL_ADDRESS AS EMAIL_ADDRESS,
-	C_LAST_REVIEW_DATE AS LAST_REVIEW_DATE,
+	D.D_DATE AS LAST_REVIEW_DATE,
+	E.D_DATE AS FIRST_SALES_DATE,
+	F.D_DATE AS FIRST_SHIPTO_DATE,
     CURRENT_TIMESTAMP AS ODS_LOAD_TIME
-FROM {{ source('TPCDS_SF100TCL','CUSTOMER') }}
-WHERE C_BIRTH_YEAR >= {{ var("start_year") }}
-    AND C_BIRTH_YEAR <  {{ var("end_year") }}
-{% if is_incremental() %}
-    AND C_LAST_REVIEW_DATE >= '{{ var("start_date","1900-01-01") }}'
-    AND C_LAST_REVIEW_DATE <  '{{ var("end_date", "2999-01-01") }}'
-{% endif %}
+FROM 
+	{{ source('TPCDS_SF100TCL','CUSTOMER') }} C
+LEFT JOIN 
+	{{ source('TPCDS_SF100TCL','DATE_DIM') }} D
+		ON C.C_LAST_REVIEW_DATE = D.D_DATE_SK
+LEFT JOIN 
+	{{ source('TPCDS_SF100TCL','DATE_DIM') }} E
+		ON C.C_FIRST_SALES_DATE_SK = E.D_DATE_SK
+LEFT JOIN 
+	{{ source('TPCDS_SF100TCL','DATE_DIM') }} F
+		ON C.C_FIRST_SHIPTO_DATE_SK = F.D_DATE_SK
+WHERE 
+	E.D_DATE >= '{{ var("start_date","1900-01-01") }}'
+    AND E.D_DATE <  '{{ var("end_date", "2999-01-01") }}'
