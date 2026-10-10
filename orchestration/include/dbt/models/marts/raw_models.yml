@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: customers
+    description: Customer data. Initial load from TPCDS, incremental loads from RAW_FILE_LOAD.
+    columns:
+      - name: C_CUSTOMER_SK
+        data_tests: [not_null]
+      - name: C_CUSTOMER_ID
+        data_tests: [not_null]
+
+  - name: customer_address
+    description: Customer addresses over time.
+    columns:
+      - name: CA_ADDRESS_SK
+        data_tests: [not_null]
+
+  - name: customer_demographics
+    columns:
+      - name: CD_DEMO_SK
+        data_tests: [not_null]
+
+  - name: store
+    columns:
+      - name: S_STORE_SK
+        data_tests: [not_null]
+
+  - name: call_center
+    columns:
+      - name: CC_CALL_CENTER_SK
+        data_tests: [not_null]
+
+  - name: warehouse
+    columns:
+      - name: W_WAREHOUSE_SK
+        data_tests: [not_null]
+
+  - name: item
+    columns:
+      - name: I_ITEM_SK
+        data_tests: [not_null]
+
+  - name: household_demographics
+    columns:
+      - name: HD_DEMO_SK
+        data_tests: [not_null]
+
+  - name: income_band
+    columns:
+      - name: IB_INCOME_BAND_SK
+        data_tests: [not_null]
+
+  - name: promotion
+    columns:
+      - name: P_PROMO_SK
+        data_tests: [not_null]
+
+  - name: reason
+    columns:
+      - name: R_REASON_SK
+        data_tests: [not_null]

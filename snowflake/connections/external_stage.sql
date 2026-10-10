@@ -1,0 +1,4 @@
+CREATE OR REPLACE EXTERNAL STAGE AZURE_STAGE
+URL = 'azure://dedevapptorageaccount.blob.core.windows.net/bronze/'
+STORAGE_INTEGRATION = AZURE_RAW_LOAD
+FILE_FORMAT = CSV_FORMAT;

@@ -1,0 +1,6 @@
+CREATE OR REPLACE STORAGE INTEGRATION AZURE_RAW_LOAD
+    TYPE = EXTERNAL_STAGE
+    STORAGE_PROVIDER = 'AZURE'
+    AZURE_TENANT_ID = 'e1e75399-bdcb-4978-b2f0-65fed50ead88'
+    ENABLED = TRUE
+    STORAGE_ALLOWED_LOCATIONS = ('azure://dedevapptorageaccount.blob.core.windows.net/bronze/');
